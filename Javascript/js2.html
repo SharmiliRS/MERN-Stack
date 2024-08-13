@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <h1 id="h1_id">This is a heading</h1>
+    <h1 id="h2_id">Hiii Sharmili</h1>
+    <button onclick="changetxt()">Submit</button>
+</body>
+<script>
+    function changetxt(){
+        document.getElementById("h1_id").innerHTML = "This is from JS";
+        let val = document.getElementById("input").value;
+        console.log(val);
+
+        if(val == ""){
+        alert("pls enter something");   
+        }
+        else{
+            document.getElementById("h2_id").innerHTML = val;
+            
+        }
+        
+    }
+    
+</script>
+</html>

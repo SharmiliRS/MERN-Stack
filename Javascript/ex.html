@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border-red{
+            border-color: red; 
+        }
+        .border-blue{
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input id="input" type="text">
+    <button onclick="change()">CLick me</button>
+    <script>
+        function change(){
+            var text = document.getElementById('input');
+            if(text == ""){
+                text.classList.add('border-red');
+            }
+            else{
+                text.classList.remove('border-blue');
+            }
+        }
+        
+    </script>
+</body>
+</html>
