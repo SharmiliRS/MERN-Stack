@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <button onclick="getApp()"> Click to fetch data</button>
+
+</body>
+<script>
+    
+    async function getApp(){
+
+        let res = await fetch("https://reqres.in/api/users");
+        //let json = await res.json();
+        console.log(res)
+        //console.log(json);
+        
+    }
+
+</script>
+</html>

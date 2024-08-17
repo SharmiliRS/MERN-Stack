@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">Click me</button>
+    <select name="fruits" id="sel">
+        <option>Apple</option>
+        <option>Orange</option>
+        <option>Pineapple</option>
+    </select>
+
+</body>
+<script>
+    document.getElementById('btn').addEventListener('click',()=>{
+        let val = document.getElementById('txt').value;
+        console.log(val);   
+    })
+    document.getElementById('sel').addEventListener('change',(e)=>{ //e is a event
+        //let val1 = document.getElementById('sel').value;
+        console.log(e.target.value);   //directly accessing the value of the element
+    })
+</script>
+</html>

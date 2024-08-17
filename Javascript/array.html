@@ -11,10 +11,31 @@
         for(let index in name){
             if(name[index].startsWith("B")){
                 console.log(index, name[index]);
-            }
-            
-            
+            }   
         }
+        let fil = name.filter((index)=>{ 
+           return name[index].startsWith("B")
+        });
+        console.log(fil);
+
+        var num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        //es6 filter 
+        //doesn't change the original array
+        let afterfilter = num.filter((i)=>{ //accepts only boolean value
+            return i%2 == 0
+        });
+        console.log(afterfilter);
+        //es6 map
+        let aftermap = num.map((i)=>{ //accepts only boolean value
+            return i*2
+        });
+        console.log(aftermap);
+        //chaining 
+        let afterfilter1 = num.filter((i)=>{ 
+            return i%2 == 0}).map((i)=>{return i+2});
+        console.log(afterfilter1);
+
+
         
         
     </script>

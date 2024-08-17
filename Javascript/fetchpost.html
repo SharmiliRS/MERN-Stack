@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <button onclick="postApi()">Click</button>
+</body>
+<script>
+    
+    //postApi
+    async function postApi(){
+        let data = {
+            "name":"Sharmili",
+            "job":"Frontend dev"};
+            let res = await fetch("https://reqres.in/api/users",
+            {"method":"POST",body: JSON.stringify(data),headers:{"content-type":"application/json"}
+        });
+            let json = await res.json();
+            console.log(json);
+            
+    }
+
+    
+</script>
+</html>
