@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        *{
+            margin:0%;
+            padding: 0%;
+        }
+        .links{
+            background-color: plum;
+            width: 100%;
+            height: 30px;
+            padding: 20px;
+            
+        }
+        .links ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: center;
+            
+            
+        }
+        .links a{
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+
+        }
+        .links a:hover{
+            color:antiquewhite;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: plum;
+            margin-left: 35%;
+            padding-top: 20px ;
+            margin-top: 70px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 1.0);
+        }
+        h1{
+            text-align: center;   
+            margin-top: 50px;      
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 50px;
+            margin-top: 40px;
+        }
+        .btn{
+            margin-top: 20px;
+            padding: 10px;
+            background-color: black;
+            border-radius: 5px;
+            width: 170px;
+            color: aliceblue;
+            font-size: 15px;
+        }
+        .p-form{
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+        input{
+            padding: 5px;
+        }
+        .acc{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="links">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+       
+    </div>
+    <div class="container">
+    <h1>Login</h1>
+    <div class="form">
+        <form id="loginForm">
+            <p class="p-form">Email</p>
+            <input type="email" id="email" required>
+            <br><br>
+            <p class="p-form">Password</p>
+            <input type="password" id="password" required>
+            <br><br>
+            <button class="btn" type="submit">Login</button>
+            <p class="acc">Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+    </div>
+</div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const response = await fetch('https://reqres.in/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+            console.log('Login Response:', data);
+            
+        });
+    </script>
+</body>
+</html>
